@@ -97,6 +97,7 @@ exports.ifUserExists = function(req, res, next) {
     // ask our post model for posts by a certain author id
     Post.findByAuthorId(req.profileUser._id).then(function(posts) {
       res.render('profile', {
+        title: `Profile for ${req.profileUser.username}`,
         currentPage: "posts",
         posts: posts,
         profileUsername: req.profileUser.username,
