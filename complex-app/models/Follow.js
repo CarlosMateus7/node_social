@@ -125,9 +125,11 @@ Follow.isVisitorFollowing = async function(followedId, visitorId) {
 
   Follow.countFollowingById = function (id){
     return new Promise(async(resolve, reject)=> {
-      let followingCount = await followsCollection.countDocuments({author: id})
+      let followingCount = await followsCollection.countDocuments({authorId: id})
       resolve(followingCount)
     })
   }
+
+ 
 
 module.exports = Follow
